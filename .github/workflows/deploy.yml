@@ -31,8 +31,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: rudrakshSoni-dev
-          NEXT_PUBLIC_BASE_PATH: /portfolio
-          NEXT_PUBLIC_SITE_URL: https://rudrakshsoni-dev.github.io/portfolio
+          NEXT_PUBLIC_SITE_URL: https://rudrakshsoni-dev.github.io
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

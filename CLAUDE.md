@@ -17,7 +17,7 @@ Goal: look like a senior engineer's site. Fast, clean, restrained. No gimmicks, 
 - framer-motion for animation (sparingly)
 - next-themes (dark is default; light optional later)
 - pnpm as package manager
-- Deploy target: GitHub Pages (static export via `.github/workflows/deploy.yml`, served at `/portfolio`)
+- Deploy target: GitHub Pages (static export via `.github/workflows/deploy.yml`, served at the root of rudrakshsoni-dev.github.io)
 
 ## Commands
 
