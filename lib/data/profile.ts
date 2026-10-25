@@ -1,3 +1,5 @@
+import { basePath } from "@/lib/data/links";
+
 export type Credential = {
   title: string;
   org: string;
@@ -27,7 +29,7 @@ export const profile: Profile = {
   description:
     "Backend and AI engineering student at BIT Mesra. I build Node.js and FastAPI services, multi-agent LangGraph systems, and contribute to Meshery.",
   location: "Kota, Rajasthan, India",
-  avatar: "/avatar.jpg",
+  avatar: `${basePath}/avatar.jpg`,
   githubUsername: "rudrakshSoni-dev",
   about: {
     intro: [

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service — job-leads",
@@ -49,9 +50,9 @@ export default function TermsPage() {
         <h2 className="pt-4 text-xl font-semibold">6. Privacy</h2>
         <p>
           How data is handled is described in the{" "}
-          <a href="/privacy" className="underline underline-offset-4">
+          <Link href="/privacy" className="underline underline-offset-4">
             Privacy Policy
-          </a>
+          </Link>
           .
         </p>
 

@@ -1,3 +1,5 @@
+import { basePath } from "@/lib/data/links";
+
 export type FeaturedContribution = {
   title: string;
   repo: string;
@@ -21,7 +23,7 @@ export const experience: Experience[] = [
   {
     org: "Layer5 / Meshery",
     role: "Open Source Contributor",
-    logo: "/logos/meshery.png",
+    logo: `${basePath}/logos/meshery.png`,
     start: "May 2026",
     end: "Present",
     summary:
@@ -46,7 +48,7 @@ export const experience: Experience[] = [
   {
     org: "AnugatAI",
     role: "SDE Intern",
-    logo: "/logos/anugatai.png",
+    logo: `${basePath}/logos/anugatai.png`,
     start: "Oct 2025",
     end: "Mar 2026",
     summary:

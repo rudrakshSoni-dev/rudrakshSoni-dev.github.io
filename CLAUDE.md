@@ -17,7 +17,7 @@ Goal: look like a senior engineer's site. Fast, clean, restrained. No gimmicks, 
 - framer-motion for animation (sparingly)
 - next-themes (dark is default; light optional later)
 - pnpm as package manager
-- Deploy target: Vercel
+- Deploy target: GitHub Pages (static export via `.github/workflows/deploy.yml`, served at `/portfolio`)
 
 ## Commands
 
@@ -45,7 +45,6 @@ app/
   layout.tsx            # fonts, theme provider, metadata, dock
   page.tsx              # composes the sections in order
   globals.css           # CSS variables (tokens from DESIGN.md)
-  api/github/route.ts   # contributions proxy (cached)
 components/
   ui/                   # shadcn primitives (generated)
   sections/             # hero, about, github-activity, experience, stack, contact
@@ -85,8 +84,9 @@ CLAUDE.md
 
 ## Data fetching
 
-- GitHub contributions are fetched server-side in `app/api/github/route.ts` using the GitHub GraphQL API with a server-only `GITHUB_TOKEN`.
-- Cache with `revalidate: 3600`. The page must render a graceful empty/skeleton state if the fetch fails.
+- The site is a static export (`output: "export"`). GitHub contributions are fetched at build time in `lib/github.ts` using the GitHub GraphQL API with `GITHUB_TOKEN` (falls back to the public calendar). The deploy workflow rebuilds daily to refresh them.
+- No API routes, server actions, or request-time APIs. Prefix public asset paths with `basePath` from `lib/data/links.ts`.
+- The page must render a graceful empty/skeleton state if the fetch fails.
 - Never expose the token to the client.
 
 Environment variables (`.env.local`, never committed):

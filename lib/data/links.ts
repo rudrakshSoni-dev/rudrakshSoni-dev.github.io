@@ -6,10 +6,12 @@ export type SocialLink = {
   href: string;
 };
 
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://rudrakshsoni.vercel.app";
 
-export const resumeHref = "/resume.pdf";
+export const resumeHref = `${basePath}/resume.pdf`;
 export const email = "mrrssoni12@gmail.com";
 
 export const linkedinLink: SocialLink = {

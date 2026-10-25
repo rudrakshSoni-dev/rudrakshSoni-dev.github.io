@@ -1,5 +1,4 @@
 import "server-only";
-import { cacheLife } from "next/cache";
 import { fetchPublicContributions } from "@/lib/github-public";
 
 export type ContributionLevel = 0 | 1 | 2 | 3 | 4;
@@ -56,9 +55,6 @@ const LEVELS: Record<string, ContributionLevel> = {
 export async function getContributions(
   username: string,
 ): Promise<Contributions | null> {
-  "use cache";
-  cacheLife({ revalidate: 3600, expire: 86400 });
-
   const token = process.env.GITHUB_TOKEN;
   try {
     if (!token) return await fetchPublicContributions(username);
